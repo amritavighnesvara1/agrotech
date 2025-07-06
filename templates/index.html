@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='fav.png') }}">
+</head>
+<body>
+    <header>
+        <h1>Mangkudilaga</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">Tentang</a>
+            <a href="/contact">Kontak</a>
+        </nav>
+    </header>
+    <main>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+        <!-- Form email -->
+        <form method="POST" action="/">
+            <input type="text" name="nama" placeholder="Nama Anda" required><br><br>
+            <input type="email" name="email" placeholder="Email Anda" required><br><br>
+            <textarea name="pesan" placeholder="Tulis pesan Anda di sini..." rows="5" cols="40" required></textarea><br><br>
+            <input type="submit" value="Kirim Pesan">
+        </form>
+    </main>
+</body>
+</html>

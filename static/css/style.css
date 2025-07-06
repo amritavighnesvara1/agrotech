@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'LeJourSerif';
+    src: url('../static/fonts/LeJourSerif.otf') format('truetype');
+}
+header h1{
+    font-family: 'LeJourSerif', serif;
+    font-size: 48px; /* atau coba 56px untuk extra besar */
+    color: #fff;
+    margin: 0;
+    padding: 20px 0;
+}
+header a{
+    font-family: 'LeJourSerif', serif;
+}
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+}
+
+nav a {
+    color: #fff;
+    margin-right: 15px;
+    text-decoration: none;
+    
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Container Form */
+form {
+    background-color: #f8f8f8;
+    padding: 2em;
+    max-width: 500px;
+    margin: 2em auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input dan Textarea */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form textarea:focus {
+    border-color: #333;
+    outline: none;
+}
+
+/* Tombol Submit */
+form input[type="submit"] {
+    background-color: #000; /* warna sesuai header */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* Flash messages */
+.flash-success {
+    color: green;
+    text-align: center;
+    margin: 1em auto;
+}
+
+.flash-error {
+    color: red;
+    text-align: center;
+    margin: 1em auto;
+}
+@media (max-width: 600px) {
+    form {
+        margin: 1em;
+        padding: 1.5em;
+    }
+}
