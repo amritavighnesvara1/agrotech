@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Pesan Pengunjung</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <h2>Pesan dari Pengunjung</h2>
+
+        {% if pesan_list %}
+        <table border="1" cellpadding="8" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Pesan</th>
+                    <th>Waktu</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pesan in pesan_list %}
+                <tr>
+                    <td>{{ pesan[0] }}</td>
+                    <td>{{ pesan[1] }}</td>
+                    <td>{{ pesan[2] }}</td>
+                    <td>{{ pesan[3] }}</td>
+                    <td>{{ pesan[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <p>Belum ada pesan.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
