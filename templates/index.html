@@ -1,36 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Portofolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='fav.png') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Petani Cerdas | AgroConnect</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="icon" href="../static/images/favicon.png">
 </head>
 <body>
-    <header>
-        <h1>Mangkudilaga</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">Tentang</a>
-            <a href="/contact">Kontak</a>
-        </nav>
-    </header>
-    <main>
+  <!-- Animated Background -->
+  <div class="particles-js" id="particles-js"></div>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#home" class="logo">
+        <img src="../static/images/logo.png" alt="AgroConnect Logo">
+        <span>AgroConnect</span>
+      </a>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-                <div class="flash-{{ category }}">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-        <!-- Form email -->
-        <form method="POST" action="/">
-            <input type="text" name="nama" placeholder="Nama Anda" required><br><br>
-            <input type="email" name="email" placeholder="Email Anda" required><br><br>
-            <textarea name="pesan" placeholder="Tulis pesan Anda di sini..." rows="5" cols="40" required></textarea><br><br>
-            <input type="submit" value="Kirim Pesan">
-        </form>
-    </main>
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">
+          <span class="link-text">Beranda</span>
+        </a></li>
+        <li><a href="#tentang" class="nav-link">
+          <span class="link-text">Tentang</span>
+        </a></li>
+        <li><a href="#fitur" class="nav-link">
+          <span class="link-text">Fitur</span>
+        </a></li>
+        <li><a href="#kontak" class="nav-link cta-link">
+          <span class="link-text">Kontak</span>
+        </a></li>
+      </ul>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1 class="hero-title">
+        <span class="title-line">Platform Digital untuk</span>
+        <span class="title-line highlight">Petani Cerdas</span>
+      </h1>
+      <p class="hero-subtitle">Hubungan langsung ke pasar, edukasi, dan layanan keuangan dalam satu aplikasi</p>
+      <button class="cta-button magnetic">
+        <span class="btn-text">Unduh Sekarang</span>
+        <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="tentang">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tentang <span>AgroConnect</span></h2>
+        <div class="divider"></div>
+      </div>
+      <p class="about-text">
+        Aplikasi Petani Cerdas adalah platform digital yang menghubungkan petani langsung dengan pasar, edukasi, dan layanan keuangan melalui teknologi. Aplikasi ini dirancang untuk meningkatkan kesejahteraan petani dengan memangkas rantai distribusi, memberikan akses informasi real-time, serta memperluas peluang penjualan.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="fitur">
+    <div class="container">
+      <div class="section-header">
+        <h2>Fitur <span>Unggulan</span></h2>
+        <div class="divider"></div>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Harga Pasar Real-Time</h3>
+          <p>Pantau harga komoditas terkini dari berbagai wilayah secara langsung dan transparan.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🛒</div>
+          <h3>Iklankan Produk</h3>
+          <p>Unggah hasil panen dan jual langsung kepada konsumen atau pelaku industri tanpa perantara.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🤝</div>
+          <h3>Kontrak & Tender</h3>
+          <p>Ikuti penawaran pembelian dari pabrik atau perusahaan dalam sistem tender yang adil.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🔥</div>
+          <h3>Lelang Produk</h3>
+          <p>Tawarkan produk ke pembeli tertinggi melalui sistem lelang berbasis kualitas.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>Edukasi Petani</h3>
+          <p>Akses materi pembelajaran dari para ahli pertanian dan bisnis.</p>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Konsultasi Ahli</h3>
+          <p>Diskusikan strategi tanam, pemasaran, atau keuangan dengan konsultan agribisnis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Apa Kata <span>Petani</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="testimonial-slider">
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"Dengan AgroConnect, saya bisa menjual hasil panen langsung ke pembeli dengan harga lebih baik!"</p>
+          <div class="testimonial-author">
+            <h4>Budi Santoso</h4>
+            <p>Petani Padi, Jawa Tengah</p>
+          </div>
+        </div>
+        <div class="testimonial-item">
+          <p class="testimonial-quote">"Edukasi dari aplikasi ini sangat membantu meningkatkan produktivitas kebun saya."</p>
+          <div class="testimonial-author">
+            <h4>Siti Aminah</h4>
+            <p>Petani Sayur, Jawa Barat</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" id="kontak">
+    <div class="container">
+      <h2>Siap Bergabung dengan <span>AgroConnect?</span></h2>
+      <p>Tingkatkan pendapatan dan efisiensi pertanian Anda sekarang</p>
+      <button class="cta-button magnetic">
+        <span class="btn-text">Daftar Sekarang</span>
+        <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="../static/images/logo.png" alt="AgroConnect Logo" style="height: 40px;">
+            <span>AgroConnect</span>
+          </div>
+          <p>Meningkatkan kesejahteraan petani melalui teknologi digital</p>
+        </div>
+        <div class="footer-links">
+          <h4>Tautan Cepat</h4>
+          <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#fitur">Fitur</a></li>
+            <li><a href="#tentang">Tentang</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Hubungi Kami</h4>
+          <p><i class="fas fa-envelope"></i> hello@agroconnect.id</p>
+          <p><i class="fas fa-phone"></i> +62 123 4567 890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 AgroConnect. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="../static/js/script.js"></script>
 </body>
 </html>
